@@ -6,14 +6,14 @@ namespace DapperCrud.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class SuperHeroController : ControllerBase
+public class SuperHeroController(IConfiguration configuration) : ControllerBase
 {
-    private readonly string _connectionString;
+    //private readonly string _connectionString;
 
-    public SuperHeroController(IConfiguration configuration)
-    {
-        _connectionString = configuration.GetConnectionString("DefaultConnection");
-    }
+    //public SuperHeroController(IConfiguration configuration)
+    //{
+    //    _connectionString = configuration.GetConnectionString("DefaultConnection");
+    //}
 
     [HttpGet]
     public async Task<ActionResult<List<SuperHero>>> GetAllSuperHeroes()
